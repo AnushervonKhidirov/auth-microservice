@@ -29,6 +29,6 @@ message JWTResponse {
 
 service AuthService {
   rpc SignUp (SignUpRequest) returns (JWTResponse);
-  rpc SignIn (SignUpRequest) returns (JWTResponse);
-  rpc SignOut (SignUpRequest) returns (google.protobuf.Empty);
+  rpc SignIn (SignInRequest) returns (JWTResponse);
+  rpc SignOut (SignOutRequest) returns (google.protobuf.Empty);
 }

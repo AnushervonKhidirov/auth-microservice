@@ -255,11 +255,11 @@ const file_protos_auth_proto_rawDesc = "" +
 	"\rrefresh_token\x18\x01 \x01(\tR\frefreshToken\"U\n" +
 	"\vJWTResponse\x12!\n" +
 	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\x12#\n" +
-	"\rrefresh_token\x18\x02 \x01(\tR\frefreshToken2\xb8\x01\n" +
+	"\rrefresh_token\x18\x02 \x01(\tR\frefreshToken2\xb9\x01\n" +
 	"\vAuthService\x126\n" +
 	"\x06SignUp\x12\x16.auth.v1.SignUpRequest\x1a\x14.auth.v1.JWTResponse\x126\n" +
-	"\x06SignIn\x12\x16.auth.v1.SignUpRequest\x1a\x14.auth.v1.JWTResponse\x129\n" +
-	"\aSignOut\x12\x16.auth.v1.SignUpRequest\x1a\x16.google.protobuf.EmptyB\bZ\x06gen/gob\x06proto3"
+	"\x06SignIn\x12\x16.auth.v1.SignInRequest\x1a\x14.auth.v1.JWTResponse\x12:\n" +
+	"\aSignOut\x12\x17.auth.v1.SignOutRequest\x1a\x16.google.protobuf.EmptyB\bZ\x06gen/gob\x06proto3"
 
 var (
 	file_protos_auth_proto_rawDescOnce sync.Once
@@ -283,8 +283,8 @@ var file_protos_auth_proto_goTypes = []any{
 }
 var file_protos_auth_proto_depIdxs = []int32{
 	0, // 0: auth.v1.AuthService.SignUp:input_type -> auth.v1.SignUpRequest
-	0, // 1: auth.v1.AuthService.SignIn:input_type -> auth.v1.SignUpRequest
-	0, // 2: auth.v1.AuthService.SignOut:input_type -> auth.v1.SignUpRequest
+	1, // 1: auth.v1.AuthService.SignIn:input_type -> auth.v1.SignInRequest
+	2, // 2: auth.v1.AuthService.SignOut:input_type -> auth.v1.SignOutRequest
 	3, // 3: auth.v1.AuthService.SignUp:output_type -> auth.v1.JWTResponse
 	3, // 4: auth.v1.AuthService.SignIn:output_type -> auth.v1.JWTResponse
 	4, // 5: auth.v1.AuthService.SignOut:output_type -> google.protobuf.Empty
