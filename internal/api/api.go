@@ -1,7 +1,6 @@
 package api
 
 import (
-	"fmt"
 	"net"
 
 	pb "auth/gen/go"
@@ -9,10 +8,6 @@ import (
 
 	"google.golang.org/grpc"
 )
-
-type AuthServiceServer struct {
-	pb.UnimplementedAuthServiceServer
-}
 
 type Server struct {
 	Network string
@@ -31,13 +26,12 @@ func (s Server) Serve() error {
 
 	grpcServer := grpc.NewServer()
 	pb.RegisterAuthServiceServer(grpcServer, &AuthServiceServer{})
+	pb.RegisterUserServiceServer(grpcServer, &UserServiceServer{})
 
 	err = grpcServer.Serve(listener)
 	if err != nil {
 		return err
 	}
-
-	fmt.Printf("gRPC server run on port %s\n", s.Address)
 
 	return nil
 }
