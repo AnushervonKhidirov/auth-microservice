@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package auth.v1;
+
+import "google/protobuf/empty.proto";
+
+option go_package = "gen/go";
+
+message SignUpRequest {
+  string login             = 1;
+  string password          = 2;
+  string verification_code = 3;
+}
+
+message SignInRequest {
+  string login             = 1;
+  string password          = 2;
+  string verification_code = 3;
+}
+
+message SignOutRequest {
+  string refresh_token = 1;
+}
+
+message JWTResponse {
+  string access_token  = 1;
+  string refresh_token = 2;
+}
+
+service AuthService {
+  rpc SignUp (SignUpRequest) returns (JWTResponse);
+  rpc SignIn (SignUpRequest) returns (JWTResponse);
+  rpc SignOut (SignUpRequest) returns (google.protobuf.Empty);
+}
